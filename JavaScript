@@ -1,1 +1,62 @@
+/**
+ * MaryAnn's Galactic Hub - Script Engine
+ * Optimized for DOM stability, performance, and accessibility standards.
+ */
 
+// Use strict mode to catch common development errors early
+'use strict';
+
+// Wait until the DOM is fully parsed and loaded before running logic
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("🌌 Galactic Hub script engine successfully initialized.");
+    
+    // Initialize the third-party weather widget engine safely
+    initWeatherWidget(document, 'script', 'weatherwidget-io-js');
+    
+    // Initialize accessibility check logs
+    auditInteractiveElements();
+});
+
+/**
+ * Initializes and embeds the WeatherWidget.io platform asynchronously
+ * @param {Document} d - The global document context
+ * @param {string} s - The element type string to generate ('script')
+ * @param {string} id - Unique identifier to prevent double script parsing
+ */
+function initWeatherWidget(d, s, id) {
+    // Avoid double injection if the script element block already exists
+    if (d.getElementById(id)) {
+        console.warn("⚠️ Weather widget script already injected into document structure.");
+        return;
+    }
+
+    const scriptElement = d.createElement(s);
+    scriptElement.id = id;
+    scriptElement.src = 'https://weatherwidget.io';
+    
+    // Find the first script element to use as a baseline insertion position
+    const firstScript = d.getElementsByTagName(s)[0];
+
+    if (firstScript && firstScript.parentNode) {
+        // Safely insert the widget asset directly into the script structure
+        firstScript.parentNode.insertBefore(scriptElement, firstScript);
+        console.log("⚡ Weather widget engine loaded successfully.");
+    } else {
+        // Fallback positioning routine if document head context is loading late
+        d.head.appendChild(scriptElement);
+        console.log("⚡ Weather widget engine appended to document head.");
+    }
+}
+
+/**
+ * Monitors active focus telemetry for accessibility validations
+ */
+function auditInteractiveElements() {
+    const badges = document.querySelectorAll('.badge');
+    
+    badges.forEach(badge => {
+        badge.addEventListener('focus', () => {
+            console.log(`🎯 Keyboard focus caught on interactive element: "${badge.getAttribute('aria-label')}"`);
+        });
+    });
+}
