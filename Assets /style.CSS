@@ -1,1 +1,194 @@
+/* ==========================================================================
+   1. Reset & Global Setup
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+body {
+    background-color: #071e43; /* Stitch Deep Space Blue */
+    color: #a3c6d9;            /* Blue Mist Text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.site-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* ==========================================================================
+   2. Typography & Accent Systems (Removed !important rules)
+   ========================================================================== */
+h1, h2, h3 {
+    background: linear-gradient(135deg, #e2bbf0 0%, #f3d6fa 50%, #c499d3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+h1 {
+    font-size: 3.2rem;
+    margin-bottom: 5px;
+}
+
+.intro-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 5px 0;
+    background: linear-gradient(90deg, #a3c6d9, #e2bbf0, #a3c6d9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.island-wave {
+    width: 120px;
+    height: 6px;
+    background: linear-gradient(90deg, transparent, #e2bbf0, #a3c6d9, #e2bbf0, transparent);
+    margin: 15px auto 25px auto;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(226, 187, 240, 0.6);
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+strong {
+    color: #e2bbf0; /* Angel Pink Pop Highlights */
+}
+
+/* ==========================================================================
+   3. Fluid Layout Infrastructure (CSS Grid & Flexbox)
+   ========================================================================== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.card {
+    background: rgba(13, 32, 64, 0.75); /* Translucent Glass Tint */
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    border: 2px solid rgba(226, 187, 240, 0.4); /* Angel Pink Frame */
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(226, 187, 240, 0.9); /* Angel Pink Border Shimmer Glow */
+    box-shadow: 0 12px 40px 0 rgba(226, 187, 240, 0.2);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgba(226, 187, 240, 0.3);
+    padding-bottom: 10px;
+}
+
+/* ==========================================================================
+   4. Interactive Badges, Widgets & Footers
+   ========================================================================== */
+.badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #e2bbf0, #f3d6fa, #c499d3);
+    color: #071e43;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-top: 15px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(226, 187, 240, 0.4);
+}
+
+.weather-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.weather-widget-container {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    background: rgba(13, 32, 64, 0.5); 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(226, 187, 240, 0.3); 
+    border-radius: 12px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: text-shadow 0.3s ease;
+}
+
+footer p:hover {
+    text-shadow: 0 0 8px rgba(226, 187, 240, 0.6); 
+}
+
+/* ==========================================================================
+   5. Explicit Breakpoint Engine (Media Queries for Small Screen Stability)
+   ========================================================================== */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    h1 {
+        font-size: 2.3rem; /* Prevents overflow cropping on smaller viewports */
+    }
+
+    .intro-text {
+        font-size: 1.1rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr; /* Clean, stacked column execution on phones */
+        gap: 15px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
