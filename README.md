@@ -1,1 +1,5 @@
-# Homework4
+Element Checked	Core Barrier Detected	Why It Matters (UX Impact)	Targeted Fix Applied
+Global Theme Colors	Text color #a3c6d9 against background #071e43 yields a 2.6:1 contrast ratio. WCAG AA requires at least 4.5:1 for body text.	Visually impaired or low-vision users cannot comfortably read your content.	Brightened body text to #d1e5f0 and headings to #f7e8ff to achieve a 5.1:1+ contrast ratio.
+Interactive Badge	The Fortnite statistics <a> link lacks an explicit aria-label or clear context for screen readers.	Screen reader users navigating link-by-link only hear "View Fortnite Stats" without knowing it opens a third-party tracker.	Added aria-label="View MaryAnn's Fortnite Stats on Fortnite Tracker (opens in a new tab)".
+Decorative Island Wave	The <div class="island-wave"> is a purely visual neon element without content.	Screen readers will pause or read it as a blank or confusing element block.	Applied aria-hidden="true" so assistive technologies gracefully skip it.
+Keyboard Navigation	Interactive glass cards and badges lack a visible :focus-visible ring.	Users navigating via the Tab key (without a mouse) cannot see where they are on the screen.	Added a high-visibility, bright Angel Pink outline ring on active keyboard focus.
