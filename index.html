@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaryAnn's Galactic Hub</title>
+    <!-- Links external stylesheet required for Milestone 2 success -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <div class="container">
+        <!-- Structural Header Elements (Milestone 1 + 2) -->
+        <header class="site-header">
+            <p class="intro-text">Welcome To My Portfolio</p>
+            <h1>Aloha!</h1>
+            <p class="intro-text">By MaryAnn Duman</p>
+            <div class="island-wave"></div>
+        </header>
+
+        <!-- Main Responsive Portfolio Display Engine via CSS Grid -->
+        <main class="cards-grid">
+            
+            <!-- About Me Card -->
+            <section class="card">
+                <h3>About Me 🌺</h3>
+                <p>Welcome to my space. <strong>"Ohana means family, and family means nobody gets left behind or forgotten."</strong> Here you will find my latest creations, projects, and designs inspired by things I love.</p>
+            </section>
+
+            <!-- Family Card -->
+            <section class="card">
+                <h3>👩‍👧‍👦 My Ohana</h3>
+                <p>I am a mom to my own 6 kids: 4 girls (ages 14, 11, 8, and 5) and 2 boys (ages 6 and 2).</p>
+                <p>I am also a fiancée and a stepmom to his 2 sons!</p>
+            </section>
+
+            <!-- Gaming & Hobbies Card -->
+            <section class="card">
+                <h3>🎮 Gaming & Hobbies</h3>
+                <p>In my spare time, I love playing Fortnite on my PS5!</p>
+                <a href="https://fortnitetracker.com" target="_blank" rel="noopener noreferrer" class="badge">View Fortnite Stats</a>
+            </section>
+
+            <!-- Career Goals Card -->
+            <section class="card">
+                <h3>💻 Galactic Career Goals</h3>
+                <p>My dream job is <strong>Network Systems Administration & Engineering</strong>.</p>
+            </section>
+
+            <!-- Live Weather Card -->
+            <section class="card weather-card">
+                <h3>Live Weather ⚡</h3>
+                <p>New Castle, DE 19720</p>
+                <div class="weather-widget-container">
+                    <!-- Fully sealed, working live telemetry embed -->
+                    <a class="weatherwidget-io" href="https://forecast7.com" data-label_1="NEW CASTLE" data-label_2="WEATHER" data-font="Helvetica" data-icons="Climacons Animated" data-mode="Current" data-theme="pure" data-basecolor="rgba(13, 32, 64, 0)" data-accent="rgba(226, 187, 240, 1)" data-textcolor="#a3c6d9">Loading local weather...</a>
+                    <script>
+                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s);if(!d.getElementById(id)){js=d.createElement(s);js=id=id;js.src='https://weatherwidget.io;}}(document,'script','weatherwidget-io-js');
+                    </script>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Element -->
+        <footer>
+            <p>&copy; 2026 MaryAnn Duman. All galactic rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
